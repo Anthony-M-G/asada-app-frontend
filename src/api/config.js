@@ -1,9 +1,11 @@
 import axios from "axios";
 import { saveAs } from 'file-saver';
-axios.defaults.withCredentials = true;
+
 export const api = axios.create({
   baseURL: "https://asada-app-backend-production.up.railway.app",
 });
+
+axios.defaults.withCredentials = true;
 
 export const login = async (username, cedula, password) => {
   try {
