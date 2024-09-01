@@ -9,7 +9,9 @@ axios.defaults.withCredentials = true;
 
 export const login = async (username, cedula, password) => {
   try {
-    const response = await api.post("/admin/login", { username, cedula, password });
+    const response = await api.post("/admin/login", { username, cedula, password },{
+      withCredentials: true,
+    });
     return response.data;
   } catch (error) {
     return error.response.data;
@@ -17,7 +19,9 @@ export const login = async (username, cedula, password) => {
 }
 export const getAllReceipts = async () => {
   try {
-    const response = await api.get("/receipts");
+    const response = await api.get("/receipts",{
+      withCredentials: true,
+    });
     return response.data;
   } catch (error) {
     return error.response.data;
@@ -26,7 +30,9 @@ export const getAllReceipts = async () => {
 
 export const updateReceipt = async (id) => {
   try {
-    const response = await api.patch(`/receipts/${id}`);
+    const response = await api.patch(`/receipts/${id}`,{
+      withCredentials: true,
+    });
     return response.data;
   } catch (error) {
     return error.response.data;
