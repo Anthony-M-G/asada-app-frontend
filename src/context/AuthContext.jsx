@@ -25,7 +25,7 @@ export const AuthProvider = ({ children }) => {
       if (response.error) {
         alert(response.error);
       } else {
-        const { username, cedula } = response;
+        const { username, cedula } = response.user;
         setUser({ username, cedula });
         setIsAuthenticated(true);
         setLoading(false);
