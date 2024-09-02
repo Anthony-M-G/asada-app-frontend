@@ -41,7 +41,9 @@ export const updateReceipt = async (id) => {
 
 export const verifyToken = async (token) => {
   try {
-    const response = await api.post("/admin/verify-token", token);
+    const response = await api.post("/admin/verify-token", token,{
+      withCredentials: true,
+    });
     return response.data;
   } catch (error) {
     return error.response.data;
@@ -49,7 +51,9 @@ export const verifyToken = async (token) => {
 }
 export const logout = async () => {
   try {
-    const response = await api.get("/admin/logout");
+    const response = await api.get("/admin/logout",{
+      withCredentials: true,
+    });
     return response.data;
   } catch (error) {
     return error.response.data;
@@ -60,6 +64,7 @@ export const generatePdf = async (id) => {
   try {
     const response = await api.get(`/receipts/pdf/${id}`,{
       responseType: "blob",
+      withCredentials: true,
     });
     // Crea un objeto Blob y usa file-saver para guardar el archivo
     const blob = new Blob([response.data], { type: 'application/pdf' });
@@ -75,7 +80,9 @@ export const createReceipt = async (data) => {
   try {
    
     console.log(data);
-    const response = await api.post("/receipts", data);
+    const response = await api.post("/receipts", data,{
+      withCredentials: true,
+    });
     return response.data;
   } catch (error) {
     return error.response.data;
