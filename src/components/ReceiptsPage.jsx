@@ -61,7 +61,7 @@ function ReceiptsPage() {
           Salir
         </h3>
         <h3 className="text-xl font-semibold my-4 text-white">
-          <Link to={"/add-user"}>Nuevo Recibo</Link>
+          <Link to={"/add-receipt"}>Nuevo Recibo</Link>
         </h3>
         <table className="min-w-full max-w-xl bg-white table-auto">
           <thead>
