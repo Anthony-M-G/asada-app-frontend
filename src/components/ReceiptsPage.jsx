@@ -54,7 +54,10 @@ function ReceiptsPage() {
     isAuthenticated && (
       <div className="overflow-x-auto">
         <h1 className="text-2xl font-semibold text-center my-4 text-white">{`Bienvenido ${user.username}`}</h1>
-        <h3 className="text-xl font-semibold my-4 text-white" onClick={logOut}>
+        <h3
+          className="text-xl font-semibold my-4 text-white"
+          onClick={() => logOut()}
+        >
           Salir
         </h3>
         <h3 className="text-xl font-semibold my-4 text-white">

@@ -14,7 +14,7 @@ function App() {
             <Route path="/" element={<LogingPage />} />
             <Route element={<ProtectedRoute />}>
               <Route path="/receipts" element={<ReceiptsPage />} />
-              <Route path="/add-user" element={<NewReceipt />} />
+              <Route path="/add-receipt" element={<NewReceipt />} />
             </Route>
           </Routes>
         </Router>
